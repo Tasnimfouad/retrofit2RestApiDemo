@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Retrofit2-RestApiDemo.iml" filepath="$PROJECT_DIR$/Retrofit2-RestApiDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/retrofit2RestApiDemo.iml" filepath="$PROJECT_DIR$/retrofit2RestApiDemo.iml" />
     </modules>
   </component>
 </project>

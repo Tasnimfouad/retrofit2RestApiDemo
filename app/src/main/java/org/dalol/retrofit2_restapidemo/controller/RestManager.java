@@ -14,8 +14,9 @@ package org.dalol.retrofit2_restapidemo.controller;
 import org.dalol.retrofit2_restapidemo.model.callback.FlowerService;
 import org.dalol.retrofit2_restapidemo.model.helper.Constants;
 
-import retrofit2.GsonConverterFactory;
+
 import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * @author Filippo Engidashet
@@ -31,7 +32,7 @@ public class RestManager {
 
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(Constants.HTTP.BASE_URL)
-                    .addConverterFactory(GsonConverterFactory.create())
+                    .addConverterFactory( GsonConverterFactory.create())
                     .build();
 
             mFlowerService = retrofit.create(FlowerService.class);

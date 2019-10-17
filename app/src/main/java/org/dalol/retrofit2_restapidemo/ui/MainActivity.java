@@ -123,10 +123,10 @@ public class MainActivity extends AppCompatActivity implements FlowerAdapter.Flo
 
         Call<List<Flower>> listCall = mManager.getFlowerService().getAllFlowers();
         listCall.enqueue(new Callback<List<Flower>>() {
-            @Override
-            public void onResponse(Response<List<Flower>> response) {
 
-                if (response.isSuccess()) {
+            @Override
+            public void onResponse(Call <List <Flower>> call, Response <List <Flower>> response) {
+                if (response.isSuccessful()) {
                     List<Flower> flowerList = response.body();
 
                     for (int i = 0; i < flowerList.size(); i++) {
@@ -154,11 +154,23 @@ public class MainActivity extends AppCompatActivity implements FlowerAdapter.Flo
             }
 
             @Override
-            public void onFailure(Throwable t) {
+            public void onFailure(Call <List <Flower>> call, Throwable throwable) {
                 mDialog.dismiss();
-                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), throwable.getMessage(), Toast.LENGTH_SHORT).show();
             }
-        });
+
+
+
+           // public void onResponse(Response<List<Flower>> response) {
+
+
+            //}
+
+           // @Override
+            //public void onFailure(Throwable t) {
+
+            //}
+            });
     }
 
     public boolean getNetworkAvailability() {
